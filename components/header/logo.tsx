@@ -14,7 +14,9 @@ const Logo: FC<LogoProps> = ({}) => {
             alt='logo-image'
             width={140}
             height={140}
-            className='filter_red'
+            sizes='100vw'
+            priority
+            className='filter_red w-20 h-20  md:w-36 md:h-36'
         />
     </Link>
   )
