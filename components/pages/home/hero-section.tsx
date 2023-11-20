@@ -38,7 +38,7 @@ const HeroSection = () => {
           </p>
 
           <div className="flex gap-2 w-full sm:w-[60%]  h-fit items-center flex-col sm:flex-row">
-            <ModInput className="" label="Email address" />
+            <ModInput className="" placeholder="Email address" />
             <Button className="bg-red-600 hover:bg-red-600/80 p-6 mt-2 sm:mt-0 sm:p-7 font-medium text-xl ">
               Get Started
               <ChevronRight className="w-7 h-7 ml-2" />

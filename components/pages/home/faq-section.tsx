@@ -1,5 +1,5 @@
 "use client";
-import MapFaqData from "./faq/map-faq";
+import MapFaqData from "@/components/pages/home/faq/map-faq";
 import { faqData, faqDataInterface } from "@/constants/faq-data";
 import Container from "@/components/shared/contianer";
 import { useCallback, useState } from "react";
@@ -10,12 +10,9 @@ import ModInput from "@/components/shared/mod-input";
 const FaqSection = () => {
   const [IsOpen, setIsOpen] = useState<number>(0);
 
-  const handleToogle = useCallback(
-    (id: number) => {
-      setIsOpen((prev) => (prev === id ? 0 : id));
-    },
-    [IsOpen]
-  );
+  const handleToogle = useCallback((id: number) => {
+    setIsOpen((prev) => (prev === id ? 0 : id));
+  }, []);
 
   return (
     <section className="mt-12 mb-14">
@@ -40,7 +37,7 @@ const FaqSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-2 items-center mt-6  justify-center px-10">
-          <ModInput className="max-w-[26rem]" label="Email address" />
+          <ModInput className="max-w-[26rem]" placeholder="Email address" />
           <Button className="bg-red-600 hover:bg-red-600/80 p-7 font-medium text-xl mt-2 sm:mt-0">
             Get Started
             <ChevronRight className="w-7 h-7 ml-2" />

@@ -1,24 +1,23 @@
 "use client";
 import { FC } from "react";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 
-interface ModInputProps {
+interface ModInputProps extends React.HTMLAttributes<HTMLInputElement> {
   className: string;
-  label: string;
 }
 
-const ModInput: FC<ModInputProps> = ({ className, label, ...props }) => {
+const ModInput: FC<ModInputProps> = ({ className, ...props }) => {
   return (
     <div className={cn("relative inset-0 w-full h-fit", className)}>
       <Input
         {...props}
-        className="peer w-full outline-none ring-0 bg-black/60 border-zinc-500 py-7"
+        className="peer w-full outline-none ring-0 bg-black/60 border-zinc-500 py-7 placeholder:text-base placeholder:text-gray-300  placeholder:text-bold 
+          placeholder:absolute placeholder:inset-0 placeholder:top-[1rem]
+          placeholder:left-3 placeholder:origin-[0] placeholder:placeholder-shown:scale-100 placeholder:focus:scale-75 placeholder:transition placeholder:duration-200
+          placeholder:focus:-translate-y-[1.1rem]
+        "
       />
-      <Label className="absolute w-fit h-fit transition duration-300 inset-0 transform -translate-y-3 top-[1.8rem] origin-[0] peer-placeholder-shown:scale-100 peer-focus:scale-75 peer-focus:-translate-y-[1.8rem] text-gray-400 left-4 text-base">
-        {label}
-      </Label>
     </div>
   );
 };
