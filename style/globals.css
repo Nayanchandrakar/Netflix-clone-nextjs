@@ -74,3 +74,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+body{
+  background :black
+}
+
+
+.filter_red{
+  filter: invert(27%) sepia(55%) saturate(2908%) hue-rotate(348deg) brightness(102%) contrast(100%);
+}
