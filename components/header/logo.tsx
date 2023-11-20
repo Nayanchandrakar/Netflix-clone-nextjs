@@ -1,25 +1,26 @@
-import { FC } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import { FC } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 interface LogoProps {
-  
+  className?: string;
 }
 
-const Logo: FC<LogoProps> = ({}) => {
+const Logo: FC<LogoProps> = ({ className }) => {
   return (
     <Link href="/">
-        <Image
-            src="/logo/logo.svg"
-            alt='logo-image'
-            width={140}
-            height={140}
-            sizes='100vw'
-            priority
-            className='filter_red w-20 h-20  md:w-36 md:h-36'
-        />
+      <Image
+        src="/logo/logo.svg"
+        alt="logo-image"
+        width={140}
+        height={140}
+        sizes="100vw"
+        priority
+        className={cn("filter_red w-20  md:w-36", className)}
+      />
     </Link>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

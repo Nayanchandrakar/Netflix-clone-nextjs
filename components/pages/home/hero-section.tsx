@@ -24,8 +24,8 @@ const HeroSection = () => {
 
         <Container className="text-white flex-col absolute inset-0 flex justify-center items-center w-full h-full space-y-5 mt-8 sm:mt-0 ">
           <h2 className=" text-[1.8rem] sm:text-[5vw] md:text-5xl text-center font-bold leading-tight">
-            Laughter. Tears. Thrills. Find it all on{""}
-            <br className="md:inline-block hidden" />
+            Laughter. Tears. Thrills. Find it all on{" "}
+            <br className="lg:inline-block hidden" />
             Netflix.
           </h2>
           <p className="font-medium text-base sm:text-xl md:text-2xl text-center">
