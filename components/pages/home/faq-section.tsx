@@ -1,9 +1,11 @@
 "use client";
+import { useCallback, useState } from "react";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+
 import MapFaqData from "@/components/pages/home/faq/map-faq";
 import { faqData, faqDataInterface } from "@/constants/faq-data";
 import Container from "@/components/shared/contianer";
-import { useCallback, useState } from "react";
-import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ModInput from "@/components/shared/mod-input";
 
@@ -41,9 +43,14 @@ const FaqSection = () => {
             newClassName={{ parentClassName: "max-w-[26rem]" }}
             placeholder="Email address"
           />
-          <Button className="bg-red-600 hover:bg-red-600/80 p-7 font-medium text-xl mt-2 sm:mt-0">
-            Get Started
-            <ChevronRight className="w-7 h-7 ml-2" />
+          <Button
+            asChild
+            className="bg-red-600 hover:bg-red-600/80 p-7 font-medium text-xl mt-2 sm:mt-0"
+          >
+            <Link href="/in">
+              Movies
+              <ChevronRight className="w-7 h-7 ml-2" />
+            </Link>
           </Button>
         </div>
       </Container>

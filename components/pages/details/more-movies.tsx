@@ -1,11 +1,12 @@
 "use client";
+import { FC, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
 import Container from "@/components/shared/contianer";
 import { getImageUrl } from "@/lib/image-url";
 import { cn } from "@/lib/utils";
 import { Movie } from "@/types/types";
-import Image from "next/image";
-import Link from "next/link";
-import { FC, useState } from "react";
 import ImageNotFound from "@/public/image/not.jpg";
 
 interface MoreMoviesProps {

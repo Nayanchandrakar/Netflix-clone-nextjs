@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Info, Play } from "lucide-react";
 import { FC, useCallback, useState } from "react";
 
-import { Movie } from "@/types/types";
+import { Movie, VideoInfo } from "@/types/types";
 import { getImageUrl } from "@/lib/image-url";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -12,23 +12,21 @@ import { usePlayer } from "@/hooks/usePlayer";
 
 interface bannerProps {
   bannerData: Movie;
+  bannerVideoData: VideoInfo;
 }
 
-const Banner: FC<bannerProps> = ({ bannerData }) => {
+const Banner: FC<bannerProps> = ({ bannerData, bannerVideoData }) => {
   const [IsImageLoading, setImageLoading] = useState(true);
   const bannerImage = getImageUrl(bannerData?.backdrop_path);
   const player = usePlayer();
 
-  const handleToogle = useCallback(
-    (id: string | number) => {
-      if (id) {
-        player?.onOpen();
-        player?.setVideoId(id);
-      }
-      return "";
-    },
-    [player?.getVideoId]
-  );
+  const handleToogle = useCallback(() => {
+    if (bannerVideoData?.key) {
+      player?.onOpen();
+      player?.setVideoId(bannerVideoData?.key);
+    }
+    return "";
+  }, [bannerVideoData?.key, player]);
 
   return (
     <section className="">
@@ -64,7 +62,7 @@ const Banner: FC<bannerProps> = ({ bannerData }) => {
 
           <div className="flex gap-2 sm:gap-4  items-center justify-center">
             <Button
-              onClick={() => handleToogle(344)}
+              onClick={() => handleToogle()}
               className="bg-white hover:bg-white/80 h-[3rem] text-lg font-semibold text-black "
               size="lg"
             >

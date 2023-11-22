@@ -1,6 +1,7 @@
+import { FC } from "react";
+
 import Container from "@/components/shared/contianer";
 import { Movie, Person } from "@/types/types";
-import { FC } from "react";
 
 interface MovieDetailsProps {
   movieData: Movie;
@@ -26,7 +27,7 @@ const MovieDetails: FC<MovieDetailsProps> = ({ movieData, creditsData }) => {
           <span className="text-zinc-400">Genres</span>
           <p className="flex fle-row gap-1">
             {movieData?.genres?.map((value) => (
-              <text>{value?.name},</text>
+              <text key={value}>{value?.name},</text>
             ))}
           </p>
           <p className="">{movieData?.production_companies?.[0]?.iso_3166_1}</p>
@@ -45,8 +46,10 @@ const MovieDetails: FC<MovieDetailsProps> = ({ movieData, creditsData }) => {
         <div className="flex font-medium text-base flex-col mt-4 items-start h-fit">
           <span className="text-zinc-400">Audio</span>
           <p className="grid grid-cols-3 gap-1">
-            {movieData?.spoken_languages?.map((language) => (
-              <text>{language?.name},</text>
+            {movieData?.spoken_languages?.map((language, index) => (
+              <text key={index} values={language?.english_name}>
+                {language?.name},
+              </text>
             ))}
           </p>
         </div>
@@ -64,7 +67,7 @@ const MovieDetails: FC<MovieDetailsProps> = ({ movieData, creditsData }) => {
         <span className="text-zinc-400">Cast</span>
         <div className="grid grid-cols-2 sm:grid-cols-5">
           {creditsData?.cast?.map((cast) => (
-            <text>{cast?.name}</text>
+            <text key={cast?.id}>{cast?.name}</text>
           ))}
         </div>
       </div>

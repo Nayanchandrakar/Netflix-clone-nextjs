@@ -70,7 +70,9 @@ const MovieDetailsbanner: FC<MovieDetailsbanner> = ({ bannerData }) => {
           <div className="flex text-zinc-400  flex-row gap-1 items-center text-base md:text-lg">
             starting: {/* @ts-ignore  */}
             {bannerData?.production_companies?.map((companies) => (
-              <span className="text-white">{companies?.name},</span>
+              <span key={companies?.name} className="text-white">
+                {companies?.name},
+              </span>
             ))}
           </div>
         </Container>

@@ -12,29 +12,21 @@ const MovieDetailsPage = async ({
 }: {
   searchParams: { [key: string]: string | undefined };
 }) => {
-  let movieData;
-  let creditsData;
-  let moreMovies;
-  let videoData;
-  let hasErrors;
-
   const { category, id } = searchParams;
 
-  if (id && category) {
-    const { data, error } = await useMultiFetch([
-      `/${category}/${id}`,
-      `/${category}/${id}/credits`,
-      `/${category}/${id}/similar`,
-      `/${category}/${id}/videos`,
-    ]);
-    movieData = data?.[0];
-    creditsData = data?.[1];
-    moreMovies = data?.[2]?.results;
-    videoData = data?.[3]?.results;
-    hasErrors = error;
-  }
+  const { data, error } = await useMultiFetch([
+    `/${category}/${id}`,
+    `/${category}/${id}/credits`,
+    `/${category}/${id}/similar`,
+    `/${category}/${id}/videos`,
+  ]);
 
-  if (hasErrors) {
+  const movieData = data?.[0];
+  const creditsData = data?.[1];
+  const moreMovies = data?.[2]?.results;
+  const videoData = data?.[3]?.results;
+
+  if (error) {
     return <NotFound />;
   }
 

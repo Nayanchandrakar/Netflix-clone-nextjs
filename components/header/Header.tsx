@@ -22,14 +22,7 @@ const Header: FC<HeaderProps> = ({}) => {
         pathname !== "/sign-in" ? "h-[50px] sticky inset-0 top-0" : "h-[78px]"
       )}
     >
-      <Container
-        className={cn(
-          " w-full h-full flex justify-between items-center flex-row",
-          pathname !== "/sign-in" || "/"
-            ? "max-w-none h-[68px] bg-black sticky inset-0 top-0 px-4 z-50 sm:px-8"
-            : null
-        )}
-      >
+      <Container className="max-w-none h-[68px] bg-black sticky inset-0 top-0 px-4 z-50 sm:px-8 w-full  flex justify-between items-center flex-row">
         <Logo />
         <Navigation />
       </Container>

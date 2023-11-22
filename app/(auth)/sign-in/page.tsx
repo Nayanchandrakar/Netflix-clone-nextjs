@@ -35,7 +35,7 @@ const Page: FC<PageProps> = ({}) => {
   const onSubmit = async (values: z.infer<typeof signInFormSchmea>) => {
     try {
       if (values) {
-        router.push("/");
+        router.push("/in");
       }
     } catch (error) {
       console.log(error);

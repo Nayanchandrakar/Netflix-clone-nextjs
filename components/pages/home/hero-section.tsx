@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 import Container from "@/components/shared/contianer";
 import ModInput from "@/components/shared/mod-input";
@@ -39,9 +40,14 @@ const HeroSection = () => {
 
           <div className="flex gap-2 w-full sm:w-[60%]  h-fit items-center flex-col sm:flex-row">
             <ModInput placeholder="Email address" />
-            <Button className="bg-red-600 hover:bg-red-600/80 p-6 mt-2 sm:mt-0 sm:p-7 font-medium text-xl ">
-              Get Started
-              <ChevronRight className="w-7 h-7 ml-2" />
+            <Button
+              asChild
+              className="bg-red-600 hover:bg-red-600/80 p-6 mt-2 sm:mt-0 sm:p-7 font-medium text-xl "
+            >
+              <Link href="/in">
+                Movie Screen
+                <ChevronRight className="w-7 h-7 ml-2" />
+              </Link>
             </Button>
           </div>
         </Container>

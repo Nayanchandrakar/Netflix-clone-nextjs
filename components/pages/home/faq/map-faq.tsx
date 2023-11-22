@@ -1,6 +1,7 @@
 "use client";
 import { FC } from "react";
 import { Plus } from "lucide-react";
+
 import { cn } from "@/lib/utils";
 
 interface mapFaqInterface {

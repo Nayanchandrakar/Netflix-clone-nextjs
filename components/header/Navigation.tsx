@@ -1,4 +1,7 @@
 import { FC } from "react";
+import Link from "next/link";
+import { Languages } from "lucide-react";
+
 import {
   Select,
   SelectContent,
@@ -6,9 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Button } from "../ui/button";
-import Link from "next/link";
-import { Languages } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface NavigationProps {}
 

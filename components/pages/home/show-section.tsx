@@ -1,11 +1,9 @@
-import ContentSection from "@/components/shared/content-section";
 import { Download } from "lucide-react";
 import Image from "next/image";
-import { FC } from "react";
 
-interface ShowSectionProps {}
+import ContentSection from "@/components/shared/content-section";
 
-const ShowSection: FC<ShowSectionProps> = ({}) => {
+const ShowSection = () => {
   return (
     <ContentSection
       reverse

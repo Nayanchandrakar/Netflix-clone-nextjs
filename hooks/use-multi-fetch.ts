@@ -9,7 +9,7 @@ export const useMultiFetch = async (endpoint: string[]) => {
           cache: "force-cache",
         })
           .then((res) => res.json())
-          .catch((error) => "error occured")
+          .catch((error) => [])
       )
     );
 

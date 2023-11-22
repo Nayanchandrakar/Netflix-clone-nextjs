@@ -1,11 +1,12 @@
 "use client";
+import { FC, useCallback, useState } from "react";
+import { PlayCircle } from "lucide-react";
+import Image from "next/image";
+
 import Container from "@/components/shared/contianer";
 import { cn } from "@/lib/utils";
 import { VideoInfo } from "@/types/types";
-import Image from "next/image";
-import { FC, useCallback, useState } from "react";
 import ImageNotFound from "@/public/image/not.jpg";
-import { PlayCircle } from "lucide-react";
 import { usePlayer } from "@/hooks/usePlayer";
 
 interface VideoSectionProps {
@@ -24,7 +25,7 @@ const VideoSection: FC<VideoSectionProps> = ({ videoData }) => {
       }
       return "";
     },
-    [player?.getVideoId]
+    [player]
   );
 
   return (

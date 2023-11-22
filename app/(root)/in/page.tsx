@@ -2,7 +2,6 @@ import Banner from "@/components/pages/movies/banner";
 import MovieRenderer from "@/components/pages/movies/components/movie-renderer";
 import { useMultiFetch } from "@/hooks/use-multi-fetch";
 import NotFound from "../details/not-found";
-import { useFetch } from "@/hooks/use-fetch";
 
 const MoviePage = async () => {
   const { data, error } = await useMultiFetch([
@@ -23,15 +22,21 @@ const MoviePage = async () => {
 
   const bannerData = upcomingMovies?.[Math.floor(Math.random() * 20)];
 
-  const {} = await useFetch(`/movie/${bannerData?.id}/videos`);
+  const bannerVideoData = await useMultiFetch([
+    `/movie/${bannerData?.id}/videos`,
+  ]);
 
-  if (error) {
+  if (error || bannerVideoData?.error) {
     return <NotFound />;
   }
 
   return (
     <>
-      <Banner bannerData={bannerData} />
+      <Banner
+        // @ts-ignore
+        bannerVideoData={bannerVideoData?.data[0]?.results[0]}
+        bannerData={bannerData}
+      />
 
       <MovieRenderer label="Popular on Netflix" movies={popularMovies} />
 
