@@ -20,9 +20,9 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
 import Logo from "@/components/header/logo";
 
-interface pageProps {}
+interface PageProps {}
 
-const page: FC<pageProps> = ({}) => {
+const Page: FC<PageProps> = ({}) => {
   const router = useRouter();
   const form = useForm<z.infer<typeof signInFormSchmea>>({
     resolver: zodResolver(signInFormSchmea),
@@ -121,8 +121,8 @@ const page: FC<pageProps> = ({}) => {
               </p>
 
               <p className="text-xs text-gray-500">
-                This page is protected by Google reCAPTCHA to ensure you're not
-                a bot. <span className="text-blue-500">Learn more.</span>
+                This Page is protected by Google reCAPTCHA to ensure you&apos;re
+                not a bot. <span className="text-blue-500">Learn more.</span>
               </p>
             </div>
           </div>
@@ -132,4 +132,4 @@ const page: FC<pageProps> = ({}) => {
   );
 };
 
-export default page;
+export default Page;

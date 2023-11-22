@@ -38,7 +38,7 @@ const FaqSection = () => {
 
         <div className="flex flex-col sm:flex-row gap-2 items-center mt-6  justify-center px-10">
           <ModInput
-            className={{ parentClassName: "max-w-[26rem]" }}
+            newClassName={{ parentClassName: "max-w-[26rem]" }}
             placeholder="Email address"
           />
           <Button className="bg-red-600 hover:bg-red-600/80 p-7 font-medium text-xl mt-2 sm:mt-0">
