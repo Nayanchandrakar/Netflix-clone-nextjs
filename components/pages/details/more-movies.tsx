@@ -17,7 +17,6 @@ interface MoreMoviesProps {
 const MoreMovies: FC<MoreMoviesProps> = ({ moreMovies, searchParams }) => {
   const [ImageLoading, setImageLoading] = useState(true);
   const selectedCategory = searchParams?.category || "movie";
-  const selectedId = searchParams?.id?.toString() || "45116";
 
   return (
     <Container className="w-full text-white max-w-[1380px] mt-24 sm:px-4 px-4 h-fit">
@@ -27,7 +26,7 @@ const MoreMovies: FC<MoreMoviesProps> = ({ moreMovies, searchParams }) => {
           <Link
             href={`/details?${new URLSearchParams({
               category: selectedCategory,
-              id: selectedId,
+              id: movie?.id.toString(),
             })}`}
             key={movie?.id}
             className={cn(

@@ -67,13 +67,13 @@ const MovieDetailsbanner: FC<MovieDetailsbanner> = ({ bannerData }) => {
           <p className="text-white  text-base md:text-lg max-w-[32rem]">
             {bannerData?.overview}
           </p>
-          <div className="flex text-zinc-400  flex-row gap-1 items-center text-base md:text-lg">
+          <div className="flex text-zinc-400 flex-col sm:flex-row gap-1 items-start sm:items-center text-base md:text-lg">
             starting: {/* @ts-ignore  */}
-            {bannerData?.production_companies?.map((companies) => (
-              <span key={companies?.name} className="text-white">
-                {companies?.name},
-              </span>
-            ))}
+            <span className="text-white flex">
+              {bannerData?.production_companies?.map(
+                (companies) => companies?.name
+              )}
+            </span>
           </div>
         </Container>
       </div>
